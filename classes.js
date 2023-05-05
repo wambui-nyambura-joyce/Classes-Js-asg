@@ -133,7 +133,7 @@ class Question {
         }
         
         submitAnswer(userAnswer) {
-        const currentQuestion = this.questions[this.currentQuestionIndex];
+        let currentQuestion = this.questions[this.currentQuestionIndex];
         if (currentQuestion.checkAnswer(userAnswer)) {
         this.score++;
         return true;
@@ -142,16 +142,14 @@ class Question {
         }
         }
         }
-        
-        // Example usage of the Quiz class/function
+    
         let quiz = new Quiz();
-        
-        const question2 = new Question(
+        let question2 = new Question(
         "What is the capital of France?",
         ["London", "Paris", "Berlin", "Madrid"],
         "Paris"
         );
-        const question3 = new Question(
+        let question3 = new Question(
         "What is the largest country in the world?",
         ["China", "USA", "Russia", "India"],
         "Russia"
