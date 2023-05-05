@@ -24,7 +24,7 @@ class Car {
     this.isAvailable = !this.isAvailable;
     }
     }
-    let car1 = new Car("Toyota", "mazda", 2020, true);
+    let car1 = new Car("Toyota", "E250", 2020, true);
     console.log(car1);
     car1.toggleAvailability();
     console.log(car1);
@@ -32,10 +32,10 @@ class Car {
 
     // question(1b)
     // Create a Rental class or function constructor that has the following properties:
-    // ● car (Car object): The car that has been rented.
-    // ● renterName (string): The name of the person who rented the car.
-    // ● rentalStartDate (Date object): The start date of the rental period.
-    // ● rentalEndDate (Date object): The end date of the rental period.
+    // car (Car object): The car that has been rented.
+    // renterName (string): The name of the person who rented the car.
+    // rentalStartDate (Date object): The start date of the rental period.
+    // rentalEndDate (Date object): The end date of the rental period.
     // The Rental class or function constructor should also have a method called
     // calculateRentalDuration that returns the rental duration in days.
         function Rental(car, renterName, rentalStartDate, rentalEndDate) {
@@ -45,14 +45,14 @@ class Car {
         this.rentalEndDate = rentalEndDate;
         
         this.calculateRentalDuration = function () {
-        const ONE_DAY_IN_MILLISECONDS = 24 * 60 * 60 * 1000;
-        const rentalDurationInMilliseconds = this.rentalEndDate - this.rentalStartDate;
-        const rentalDurationInDays = Math.round(rentalDurationInMilliseconds / ONE_DAY_IN_MILLISECONDS);
+        let One_day_inms = 24 * 60 * 60 * 1000;
+        let rentalDurationInMilliseconds = this.rentalEndDate - this.rentalStartDate;
+        let rentalDurationInDays = Math.round(rentalDurationInMilliseconds / One_day_inms);
         return rentalDurationInDays;
         };
         }
-        const car2 = new Car("Volvo", "E200", 2020, true);
-        const rental1 = new Rental(car2, "Vallary Buraje", new Date("2023-05-01"), new Date("2023-05-05"));
+        let car2 = new Car("Volvo", "E200", 2020, true);
+        let rental1 = new Rental(car2, "Vallary Buraje", new Date("2023-05-01"), new Date("2023-05-05"));
         console.log(rental1.calculateRentalDuration()); 
         
         // question(1c)
@@ -61,9 +61,9 @@ class Car {
         // a rental involving the car you created. Finally, calculate the rental duration using
         // the calculateRentalDuration method.   
         
-const car3 = new Car("Honda", "E100", 2022, true);
-const rental2 = new Rental(car3, "Jane Smith", new Date("2023-05-01"), new Date("2023-05-08"));
-const rentalDuration = rental2.calculateRentalDuration();
+let car3 = new Car("Honda", "E100", 2022, true);
+let rental2 = new Rental(car3, "Joyce Nyambura", new Date("2023-05-01"), new Date("2023-05-08"));
+let rentalDuration = rental2.calculateRentalDuration();
 console.log(`duration:${rentalDuration}`); 
 
 
@@ -90,12 +90,7 @@ class Question {
     }
     }
 
-    let question1 = new Question(
-    "What is the capital of Kenya?",
-    ["London", "Paris", "Berlin", "Madrid"],
-    "Nairobi"
-    );
-    
+    let question1 = new Question("What is the capital of Kenya?",["London", "Paris", "Berlin","Madrid","Nairobi"],"Nairobi");
     console.log(question1.checkAnswer("Nairobi")); 
     console.log(question1.checkAnswer("London")); 
     
@@ -144,21 +139,13 @@ class Question {
         }
     
         let quiz = new Quiz();
-        let question2 = new Question(
-        "What is the capital of France?",
-        ["London", "Paris", "Berlin", "Madrid"],
-        "Paris"
-        );
-        let question3 = new Question(
-        "What is the largest country in the world?",
-        ["China", "USA", "Russia", "India"],
-        "Russia"
-        );
+        let question2 = new Question("What is the capital of France?",["London", "Paris", "Berlin", "Madrid"],"Paris");
+        let question3 = new Question("What is the largest country in the world?",["Kenya", "Ethiopia", "Russia", "Rwanda"],"Russia");
         
         quiz.addQuestion(question2);
         quiz.addQuestion(question3);
         
-        console.log(quiz.submitAnswer("Paris"));
+        console.log(quiz.submitAnswer("Kenya"));
         console.log(quiz.score); 
         
         console.log(quiz.nextQuestion());
